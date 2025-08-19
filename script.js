@@ -12,7 +12,11 @@ const generateGrid = (number) => {
   }
 
   const handleMouseEnter = (e) => {
-    e.target.classList.add('mouse-hover');
+    e.target.style.backgroundColor = `rgb(
+    ${Math.floor(Math.random() * 256)},
+    ${Math.floor(Math.random() * 256)},
+    ${Math.floor(Math.random() * 256)}
+    )`;
   };
 
   for (let i = 0; i < number * number; i++) {
