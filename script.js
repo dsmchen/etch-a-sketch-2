@@ -28,8 +28,14 @@ const generateGrid = (number) => {
 };
 
 const handleClick = () => {
-  let number = prompt('How many squares per side? Max 100.');
-  number = number > 100 ? 100 : number;
+  let number = prompt('How many squares per side? Min 1. Max 100.');
+
+  if (number > 100) {
+    number = 100;
+  } else if (number < 1) {
+    number = 1;
+  }
+
   generateGrid(number);
 };
 
