@@ -1,16 +1,34 @@
 const container = document.querySelector('#container');
+const button = document.querySelector('button');
 
-for (let i = 0; i < 16 * 16; i++) {
-  const square = document.createElement('div');
-  square.style.flexBasis = `${(1 / 16) * 100}%`;
-  container.appendChild(square);
-}
+const generateGrid = (number) => {
+  if (container.hasChildNodes) {
+    function removeAllChildNodes(parent) {
+      while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+      }
+    }
+    removeAllChildNodes(container);
+  }
 
-const handleMouseEnter = (e) => {
-  e.target.classList.add('mouse-hover');
+  const handleMouseEnter = (e) => {
+    e.target.classList.add('mouse-hover');
+  };
+
+  for (let i = 0; i < number * number; i++) {
+    const square = document.createElement('div');
+    square.style.flexBasis = `${(1 / number) * 100}%`;
+    square.addEventListener('mouseenter', handleMouseEnter);
+    container.appendChild(square);
+  }
 };
 
-const squares = document.querySelectorAll('#container div');
-squares.forEach((square) => {
-  square.addEventListener('mouseenter', handleMouseEnter);
-});
+const handleClick = () => {
+  let number = prompt('How many squares per side? Max 100.');
+  number = number > 100 ? 100 : number;
+  generateGrid(number);
+};
+
+button.addEventListener('click', handleClick);
+
+generateGrid(16);
