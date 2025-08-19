@@ -1,3 +1,18 @@
 h1 {
+  font-family: sans-serif;
   text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 352px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+#container div {
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
 }
