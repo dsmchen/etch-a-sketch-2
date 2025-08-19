@@ -6,13 +6,18 @@ h1 {
 #container {
   display: flex;
   flex-wrap: wrap;
-  width: 352px;
+  width: 192px;
   margin: 0 auto;
   border: 1px solid black;
 }
 
 #container div {
   border: 1px solid black;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
+  transition: 300ms;
+}
+
+.mouse-hover {
+  background-color: black;
 }
