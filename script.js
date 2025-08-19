@@ -34,6 +34,8 @@ const handleClick = () => {
     number = 100;
   } else if (number < 1) {
     number = 1;
+  } else if (number % 1 !== 0) {
+    number = Math.round(number);
   }
 
   generateGrid(number);
